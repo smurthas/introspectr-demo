@@ -38,7 +38,7 @@ add:
 
     - (void)doSearch:(NSString *)text
     {
-        SinglyRequest *request = [SinglyRequest requestWithEndpoint:@"types/all_feed" andParameters:[[NSDictionary alloc] initWithObjectsAndKeys:text, @"q", nil]];
+        SinglyRequest *request = [SinglyRequest requestWithEndpoint:@"types/photos" andParameters:[[NSDictionary alloc] initWithObjectsAndKeys:text, @"q", nil]];
 
         [NSURLConnection sendAsynchronousRequest:request
                                            queue:[NSOperationQueue mainQueue]
@@ -51,26 +51,11 @@ add:
 
 in the iterator of `updateResults` add:
 
-    NSMutableDictionary *newObject = [[NSMutableDictionary alloc] init];
-    NSDictionary *oembed = [object valueForKey:@"oembed"];
-    id title = [oembed valueForKey:@"title"];
-    [newObject setValue:title forKey:@"title"];
-
-    id descr = [oembed valueForKey:@"text"];
-    if (!descr) descr = [oembed valueForKey:@"description"];
-    if (!descr) descr = [oembed valueForKey:@"url"];
-    [newObject setValue:descr forKey:@"description"];
-
-    [newObject setValue:[object valueForKey:@"at"] forKey:@"at"];
-
-    [_objects addObject:newObject];
+    [_objects addObject:[object valueForKey:@"oembed"]];
 
 to `cellForRowAtIndexPath` add:
 
-    NSDate *object = _objects[indexPath.row];
-
-    cell.textLabel.text = [object valueForKey:@"title"];
-    cell.detailTextLabel.text = [object valueForKey:@"description"];
+    cell.textLabel.text = [_objects[indexPath.row] valueForKey:@"title"];
 
 to `searchBarSearchButtonClicked` add:
 
@@ -81,5 +66,7 @@ to `searchBarSearchButtonClicked` add:
 in `configureView` add:
 
     self.detailTitleLabel.text = [self.detailItem valueForKey:@"title"];
-    self.detailDescriptionLabel.text = [self.detailItem valueForKey:@"description"];
-    self.detailDateLabel.text = [formatter stringFromDate:[NSDate dateWithTimeIntervalSince1970:([[self.detailItem valueForKey:@"at"] floatValue] / 1000)]];
+
+    NSURL *url = [NSURL URLWithString:[self.detailItem valueForKey:@"url"]];
+    NSURLRequest *requestObj = [NSURLRequest requestWithURL:url];
+    [self.image loadRequest:requestObj];
