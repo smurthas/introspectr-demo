@@ -8,10 +8,21 @@
 
 #import <UIKit/UIKit.h>
 
+#import <SinglySDK/SinglySDK.h>
+
 @class IRDetailViewController;
 
-@interface IRMasterViewController : UITableViewController
+@interface IRMasterViewController : UITableViewController {
+    UISearchBar *searchBar;
+}
 
 @property (strong, nonatomic) IRDetailViewController *detailViewController;
+@property (nonatomic, retain) IBOutlet UISearchBar *searchBar;
+
+//TODO remove??
+//- (void)doLogin:(NSString *)serviceName;
+//- (void)doSearch:(NSString *)text;
+
+- (IBAction)dismissAndLogin:(UIStoryboardSegue *)segue;
 
 @end
