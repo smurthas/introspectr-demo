@@ -1,3 +1,6 @@
+# Add the Singly SDK
+
+
 # IRAppDelegate.m
 
     #import <SinglySDK/SinglySDK.h>
