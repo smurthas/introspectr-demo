@@ -8,11 +8,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "IntrospectrTest/IRMasterViewController.m"
-         timestampString = "381818675.003658"
+         timestampString = "381868040.699157"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "25"
-         endingLineNumber = "25"
+         startingLineNumber = "22"
+         endingLineNumber = "22"
          landmarkName = "searchBar"
          landmarkType = "19">
       </FileBreakpoint>

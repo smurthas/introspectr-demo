@@ -10,9 +10,6 @@
 
 #import "IRDetailViewController.h"
 
-#import <SinglySDK/SinglySDK.h>
-
-
 @interface IRMasterViewController () {
     NSMutableArray *_objects;
 }

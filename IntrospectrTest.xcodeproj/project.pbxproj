@@ -20,8 +20,6 @@
 		F4E1350C16C0A3E50010BCDB /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4E1350A16C0A3E50010BCDB /* MainStoryboard_iPad.storyboard */; };
 		F4E1350F16C0A3E50010BCDB /* IRMasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F4E1350E16C0A3E50010BCDB /* IRMasterViewController.m */; };
 		F4E1351216C0A3E50010BCDB /* IRDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F4E1351116C0A3E50010BCDB /* IRDetailViewController.m */; };
-		F4E1351A16C0A43B0010BCDB /* SinglySDK.bundle in Resources */ = {isa = PBXBuildFile; fileRef = F4E1351816C0A43B0010BCDB /* SinglySDK.bundle */; };
-		F4E1351B16C0A43B0010BCDB /* SinglySDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4E1351916C0A43B0010BCDB /* SinglySDK.framework */; };
 		F4E1351F16C0A4730010BCDB /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4E1351C16C0A4730010BCDB /* Accounts.framework */; };
 		F4E1352016C0A4730010BCDB /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4E1351D16C0A4730010BCDB /* AddressBook.framework */; };
 		F4E1352116C0A4730010BCDB /* AddressBookUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4E1351E16C0A4730010BCDB /* AddressBookUI.framework */; };
@@ -50,8 +48,6 @@
 		F4E1350E16C0A3E50010BCDB /* IRMasterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IRMasterViewController.m; sourceTree = "<group>"; };
 		F4E1351016C0A3E50010BCDB /* IRDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IRDetailViewController.h; sourceTree = "<group>"; };
 		F4E1351116C0A3E50010BCDB /* IRDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IRDetailViewController.m; sourceTree = "<group>"; };
-		F4E1351816C0A43B0010BCDB /* SinglySDK.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SinglySDK.bundle; sourceTree = "<group>"; };
-		F4E1351916C0A43B0010BCDB /* SinglySDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SinglySDK.framework; sourceTree = "<group>"; };
 		F4E1351C16C0A4730010BCDB /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
 		F4E1351D16C0A4730010BCDB /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
 		F4E1351E16C0A4730010BCDB /* AddressBookUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBookUI.framework; path = System/Library/Frameworks/AddressBookUI.framework; sourceTree = SDKROOT; };
@@ -74,7 +70,6 @@
 				F4E134F016C0A3E40010BCDB /* UIKit.framework in Frameworks */,
 				F4E134F216C0A3E40010BCDB /* Foundation.framework in Frameworks */,
 				F4E134F416C0A3E40010BCDB /* CoreGraphics.framework in Frameworks */,
-				F4E1351B16C0A43B0010BCDB /* SinglySDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -107,8 +102,6 @@
 				F4E1351C16C0A4730010BCDB /* Accounts.framework */,
 				F4E1351D16C0A4730010BCDB /* AddressBook.framework */,
 				F4E1351E16C0A4730010BCDB /* AddressBookUI.framework */,
-				F4E1351816C0A43B0010BCDB /* SinglySDK.bundle */,
-				F4E1351916C0A43B0010BCDB /* SinglySDK.framework */,
 				F4E134EF16C0A3E40010BCDB /* UIKit.framework */,
 				F4E134F116C0A3E40010BCDB /* Foundation.framework */,
 				F4E134F316C0A3E40010BCDB /* CoreGraphics.framework */,
@@ -204,7 +197,6 @@
 				F4E1350616C0A3E50010BCDB /* Default-568h@2x.png in Resources */,
 				F4E1350916C0A3E50010BCDB /* MainStoryboard_iPhone.storyboard in Resources */,
 				F4E1350C16C0A3E50010BCDB /* MainStoryboard_iPad.storyboard in Resources */,
-				F4E1351A16C0A43B0010BCDB /* SinglySDK.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -359,6 +351,7 @@
 				F4E1351716C0A3E50010BCDB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
