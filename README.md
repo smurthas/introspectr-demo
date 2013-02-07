@@ -21,33 +21,10 @@ add:
 
     #import <SinglySDK/SinglySDK.h>
 
-and:
-
-    - (void) doLogin:(NSString *)serviceName
-    {
-        SinglyService *service = [SinglyService serviceWithIdentifier:serviceName];
-        service.delegate = self;
-        [service requestAuthorizationFromViewController:self];
-    }
-
 to `dismissAndLogin` add:
 
-    [self doLogin:[segue identifier]];
-
-add:
-
-    - (void)doSearch:(NSString *)text
-    {
-        SinglyRequest *request = [SinglyRequest requestWithEndpoint:@"types/photos" andParameters:[[NSDictionary alloc] initWithObjectsAndKeys:text, @"q", nil]];
-
-        [NSURLConnection sendAsynchronousRequest:request
-                                           queue:[NSOperationQueue mainQueue]
-                               completionHandler:^(NSURLResponse *response, NSData *data, NSError *error) {
-                                   NSArray *all = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:nil];
-                                   [self updateResults:all];
-                                   [[self tableView] reloadData];
-                               }];
-    }
+    SinglyService *service = [SinglyService serviceWithIdentifier:serviceName];
+    [service requestAuthorizationFromViewController:self];
 
 in the iterator of `updateResults` add:
 
@@ -59,14 +36,19 @@ to `cellForRowAtIndexPath` add:
 
 to `searchBarSearchButtonClicked` add:
 
-    [self doSearch:searchBar.text];
+    SinglyRequest *request = [SinglyRequest requestWithEndpoint:@"types/photos" andParameters:[[NSDictionary alloc] initWithObjectsAndKeys:text, @"q", nil]];
+
+    [NSURLConnection sendAsynchronousRequest:request
+                                       queue:[NSOperationQueue mainQueue]
+                           completionHandler:^(NSURLResponse *response, NSData *data, NSError *error) {
+                               NSArray *all = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:nil];
+                               [self updateResults:all];
+                               [[self tableView] reloadData];
+                           }];
 
 # IRDetailViewController
 
 in `configureView` add:
 
-    self.detailTitleLabel.text = [self.detailItem valueForKey:@"title"];
-
-    NSURL *url = [NSURL URLWithString:[self.detailItem valueForKey:@"url"]];
-    NSURLRequest *requestObj = [NSURLRequest requestWithURL:url];
-    [self.image loadRequest:requestObj];
+    self.detailTitleLabel.text = [object valueForKey:@"title"];
+    [self.image loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:[object valueForKey:@"url"]]]];

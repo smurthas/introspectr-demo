@@ -40,6 +40,8 @@
     }
     // Update the user interface for the detail item.
 
+    id object = self.detailItem;
+    
     if (self.detailItem) {
 
     }
